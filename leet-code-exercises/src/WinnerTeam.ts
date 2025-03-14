@@ -1,5 +1,3 @@
-import * as chai from 'chai';
-
 export function tournamentWinner(competitions: string[][], results: number[]) {
     let scoreBoard = new Map<string, number>();
     for( let i=0;i<competitions.length; i++){
@@ -29,7 +27,28 @@ export function tournamentWinner(competitions: string[][], results: number[]) {
   }
   
 
+function tournamentWinnerSolution2(competitions: string[][], results: number[]) {
 
+  let scoreBoard = new Map<string, number>();
+  let tournamentWinner = {team: "",score:  0};
+  for( let i=0;i<competitions.length; i++){
+    let winnderIndex: number = results[i] == 0 ?1:0
+    let winner:string = competitions[i][winnderIndex] 
+    let winnersNewPointTelly =(scoreBoard.get(winner) ??  0) +3
+    
+    scoreBoard.set(winner,winnersNewPointTelly)
+  
+    if(winnersNewPointTelly > tournamentWinner.score){
+      tournamentWinner = {team: winner, score: winnersNewPointTelly}
+    }
+  }
+  return tournamentWinner.team;
+
+}
+  
+
+  
+  
 
 
 
