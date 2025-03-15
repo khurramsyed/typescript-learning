@@ -6,8 +6,8 @@ export function tournamentWinner(competitions: string[][], results: number[]) {
       
       if(scoreBoard.has(winner)){
         console.log(`${winner} ${scoreBoard.get(winner)}`)
-        let winnerCurrentPoints = scoreBoard.get(winner) as number;
-        winnerCurrentPoints = scoreBoard.get(winner)  as number
+        let winnerCurrentPoints = scoreBoard.get(winner)
+        winnerCurrentPoints = scoreBoard.get(winner)! 
         winnerCurrentPoints +=3;
         scoreBoard.set(winner,winnerCurrentPoints)
       }
