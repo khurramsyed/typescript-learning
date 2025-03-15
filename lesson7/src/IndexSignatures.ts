@@ -74,3 +74,9 @@ for( const key in teacher){
 
 //// HOW TO Avoid this signature issue , you are saying keyof typeof to get the type of object , rather than using class/interface name/.
 Object.keys(teacher).map( key => {console.log (teacher[key as keyof typeof teacher])} ) // Assume that we do not know the type of teacher object , we can use keyof typeof object
+
+const logStudentKey = (student: Student, key: keyof Student) : void => {
+    console.log( `Student ${key} : ${student[key]}`)
+}
+
+logStudentKey(student, 'GPA')
